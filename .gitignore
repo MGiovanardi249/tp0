@@ -1,0 +1,8 @@
+# Binarios de Go
+tp0
+*.exe
+*.test
+__debug_bin
+
+# Dependencias 
+vendor/
