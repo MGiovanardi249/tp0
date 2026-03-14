@@ -5,10 +5,24 @@ func Swap(x *int, y *int) {
 
 }
 
-// Maximo devuelve la posición del mayor elemento del arreglo, o -1 si el el arreglo es de largo 0. Si el máximo
+// Maximo devuelve la posición del mayor elemento del arreglo, o -1 si el el arreglo es
+//  de largo 0. Si el máximo
 // elemento aparece más de una vez, se debe devolver la primera posición en que ocurre.
 func Maximo(vector []int) int {
+		if(len(vector) == 0 ){
 	return -1
+	}
+	posicionMaxima := 0
+	valorMaximo := vector[0]
+	
+	for i , v := range vector{
+	 	if valorMaximo < v {
+			valorMaximo = v
+			posicionMaxima = i
+		}
+    
+	}
+	return posicionMaxima
 }
 
 // Comparar compara dos arreglos de longitud especificada.
@@ -28,7 +42,10 @@ func Seleccion(vector []int) {
 // Esta función debe implementarse de forma RECURSIVA. Se puede usar una función auxiliar (que sea
 // la recursiva).
 func Suma(vector []int) int {
+	if(len(vector) == 0){
 	return 0
+	}
+	return Suma(vector[10]) 
 }
 
 // EsCadenaCapicua devuelve si la cadena es un palíndromo. Es decir, si se lee igual al derecho que al revés.
