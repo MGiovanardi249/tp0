@@ -1,5 +1,12 @@
 package ejercicios
 
+import (
+	"fmt"
+	"bufio"
+	"strconv"
+	"os"
+)
+
 // Swap intercambia dos valores enteros.
 func Swap(x *int, y *int) {
 	auxiliar := *x
@@ -94,5 +101,32 @@ func EsCadenaCapicua(cadena string) bool {
 	}
 
 	return EsCadenaCapicua(cadena[1 : len(cadena)-1])
+
+}
+
+func Lectura(Archivo string) []int {
+	archivo, _ := os.Open(Archivo)
+	defer archivo.Close()
+
+	var numeros []int
+
+	scanner := bufio.NewScanner(archivo)
+
+	for scanner.Scan() {
+		texto := scanner.Text()
+		numero, _ := strconv.Atoi(texto)
+
+		numeros = append(numeros, numero)
+
+	}
+	return numeros
+}
+
+func Imprimir(ganador []int ){
+	for _, v := range ganador {
+		fmt.Println(v)
+	}
+
+
 
 }
